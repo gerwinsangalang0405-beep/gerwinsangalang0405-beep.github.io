@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerwin Sangalang — Video Editor & Digital Content Specialist</title>
+<meta name="description" content="Gerwin Sangalang is a video editor and digital content specialist based in Angeles City, Philippines, with experience in YouTube production, graphic design and sports data operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#f3f9f9;
+    --surface:#ffffff;
+    --tint:#dcecec;
+    --teal:#0f7b7b;
+    --teal-dark:#0b5e5e;
+    --ink:#0b2a2a;
+    --text:#41575a;
+    --muted:#6b8083;
+    --line:#d5e4e4;
+    --serif:'DM Serif Display',Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);line-height:1.15}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:6px;font-size:14px;font-weight:600;letter-spacing:.03em;text-decoration:none;border:1.5px solid var(--teal);transition:background .2s,color .2s}
+  .btn-solid{background:var(--teal);color:#fff}
+  .btn-solid:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
+  .btn-ghost{color:var(--teal);background:transparent}
+  .btn-ghost:hover{background:var(--teal);color:#fff}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:var(--serif);font-size:24px;color:var(--ink);text-decoration:none;letter-spacing:.02em}
+  .logo span{color:var(--teal)}
+  .nav ul{display:flex;gap:30px;list-style:none}
+  .nav ul a{font-size:14px;font-weight:500;color:var(--teal);text-decoration:none}
+  .nav ul a:hover{color:var(--ink)}
+  .nav .btn{padding:10px 20px}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#dcecec 0%,#eef6f6 100%);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;min-height:620px;padding:72px 0}
+  .hero h1{font-size:clamp(40px,5.4vw,64px);margin-bottom:10px}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero .role{font-family:var(--serif);font-size:clamp(24px,3vw,34px);color:var(--teal);margin-bottom:22px}
+  .hero p.lead{max-width:520px;margin-bottom:34px;font-size:17px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-photo{position:relative;justify-self:center;width:min(100%,430px)}
+  .hero-photo::before{content:"";position:absolute;inset:-18px;border-radius:50%;background:rgba(255,255,255,.55)}
+  .hero-photo img{position:relative;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 40%;border-radius:50%;border:8px solid #fff;box-shadow:0 20px 50px rgba(11,42,42,.16)}
+
+  /* TRUST STRIP */
+  .strip{background:var(--surface);border-bottom:1px solid var(--line)}
+  .strip-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .strip-item{padding:26px 22px;border-right:1px solid var(--line)}
+  .strip-item:first-child{padding-left:0}
+  .strip-item:last-child{border-right:none}
+  .strip-item b{display:block;font-family:var(--serif);font-weight:400;font-size:20px;color:var(--ink);line-height:1.25;margin-bottom:2px}
+  .strip-item span{font-size:13px;color:var(--muted)}
+
+  section{padding:96px 0}
+  .section-head{max-width:620px;margin-bottom:48px}
+  .section-head h2{font-size:clamp(30px,4vw,44px)}
+  .section-head p{margin-top:14px}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+  .about-grid h2{font-size:clamp(30px,4vw,44px);margin-bottom:20px}
+  .about-grid p+p{margin-top:16px}
+  .facts{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 28px}
+  .fact{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .fact:last-child{border-bottom:none}
+  .fact span{color:var(--muted)}
+  .fact b{font-weight:600;color:var(--ink);text-align:right}
+
+  /* SERVICES */
+  .services{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:32px}
+  .card-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .card-top img{width:36px;height:36px !important;object-fit:contain;border-radius:8px}
+  .card-top .ico{width:36px;height:36px;border-radius:8px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:600}
+  .card h3{font-size:24px}
+  .card p{font-size:15px}
+  .card .tools{margin-top:16px;font-size:13px;color:var(--teal);font-weight:600}
+
+  /* EXPERIENCE */
+  .timeline{display:grid;gap:24px}
+  .job{display:grid;grid-template-columns:200px 1fr;gap:32px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:32px}
+  .job .when{font-size:14px;font-weight:600;color:var(--teal)}
+  .job .when small{display:block;margin-top:4px;font-weight:400;color:var(--muted);font-size:13px}
+  .job h3{font-size:26px;margin-bottom:2px}
+  .job .org{display:inline-block;margin-bottom:14px;font-size:15px;font-weight:500;color:var(--teal);text-decoration:none;border-bottom:1px solid var(--line)}
+  .job .org:hover{border-bottom-color:var(--teal)}
+  .job ul{padding-left:18px;display:grid;gap:6px;font-size:15px}
+  .job li::marker{color:var(--teal)}
+
+  /* RECOGNITION */
+  .recognition{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rec-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .rec-grid img{border-radius:12px;border:1px solid var(--line);box-shadow:0 14px 40px rgba(11,42,42,.12)}
+  .rec-grid h2{font-size:clamp(30px,4vw,44px);margin-bottom:18px}
+  .meta{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}
+  .meta div span{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .meta div b{font-weight:600;color:var(--ink);font-size:15px}
+
+  /* EDUCATION */
+  .edu{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px 32px}
+  .edu h3{font-size:24px}
+  .edu p{font-size:15px}
+  .pill{font-size:13px;font-weight:600;color:var(--teal);background:var(--tint);padding:7px 16px;border-radius:999px;white-space:nowrap}
+
+  /* CONTACT */
+  .contact{background:var(--teal-dark);color:#cfe6e6;text-align:center}
+  .contact h2{color:#fff;font-size:clamp(32px,4.5vw,50px);margin-bottom:16px}
+  .contact p.sub{max-width:540px;margin:0 auto 38px}
+  .contact .eyebrow{color:#8fd0d0}
+  .channels{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+  .channel{display:flex;align-items:center;gap:14px;text-align:left;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:16px 22px;text-decoration:none;color:#fff;transition:background .2s}
+  .channel:hover{background:rgba(255,255,255,.16)}
+  .channel img{width:30px;height:30px !important;object-fit:contain}
+  .channel span{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9fcfcf}
+  .channel b{font-weight:500;font-size:15px;word-break:break-all}
+
+  footer{background:var(--ink);color:#8fa7a7;font-size:13px;padding:24px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    .nav ul{display:none}
+    .hero-grid,.about-grid,.rec-grid{grid-template-columns:1fr}
+    .hero-grid{padding:48px 0 64px;min-height:0}
+    .hero-photo{order:-1;width:min(72%,320px)}
+    .about-grid,.rec-grid{gap:40px}
+    .strip-grid{grid-template-columns:1fr 1fr}
+    .strip-item{padding:20px 16px;border-bottom:1px solid var(--line)}
+    .strip-item:nth-child(2){border-right:none}
+    .strip-item:nth-child(odd){padding-left:0}
+    .cards{grid-template-columns:1fr}
+    .job{grid-template-columns:1fr;gap:12px;padding:26px}
+    section{padding:72px 0}
+  }
+  @media (max-width:480px){
+    .wrap{padding:0 20px}
+    .meta{grid-template-columns:1fr}
+    .nav .btn{padding:9px 16px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home" aria-label="Gerwin Sangalang — home">G<span>S</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#recognition">Recognition</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-solid" href="#contact">Let's talk</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home" style="padding:0">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Angeles City, Philippines</div>
+      <h1>Hello, I'm <em>Gerwin Sangalang</em></h1>
+      <div class="role">Data Entry Consultant | Data Quality &amp; Digital Content</div>
+      <p class="lead">I have experience in data entry and quality control at FrameSports.ai, an AI-powered sports analytics company. I also have a background in video production, YouTube content creation, and graphic design, combining accuracy, attention to detail, and creativity across a range of digital tasks.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#experience">View experience</a>
+        <a class="btn btn-ghost" href="#contact">Contact me</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/Professional Suit Portrait.png" alt="Portrait of Gerwin Sangalang" width="880" height="773">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-item"><b>Frames Sports AI</b><span>Data Entry Consultant, 2026 – present</span></div>
+    <div class="strip-item"><b>Cloudstaff AI Hackathon</b><span>Best Student Contribution, 2025</span></div>
+    <div class="strip-item"><b>YouTube Production</b><span>Long-form &amp; Shorts, 2023 – 2024</span></div>
+    <div class="strip-item"><b>BS Computer Science</b><span>City College of Angeles</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">About</div>
+      <h2>Reliable work, careful about the details.</h2>
+      <p>I'm a Data entry and quality control consultant with experience recording, reviewing, and verifying rugby match data for Frames Sports AI. I focus on accuracy, consistency, and attention to detail, ensuring information is properly documented and meets established quality standards.</p>
+      <p>I also have experience with digital content creation and AI-assisted tools, which help me streamline workflows, organize information, and improve efficiency while maintaining data accuracy.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span>Current role</span><b>Data Entry Consultant</b></div>
+      <div class="fact"><span>Focus areas</span><b>Video, design, data operations</b></div>
+      <div class="fact"><span>Location</span><b>Angeles City, Philippines</b></div>
+      <div class="fact"><span>Education</span><b>BS Computer Science</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Services</div>
+      <h2>What I can do for your team</h2>
+      <p>Practical, well-scoped support for content and data work.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-top"><img src="assets/capcut.png" alt="" width="36" height="36"><h3>Video Editing</h3></div>
+        <p>Short-form and long-form editing with transitions, motion graphics, subtitles, colour adjustment, audio sync and sound design for social media and promotional content.</p>
+        <div class="tools">CapCut</div>
+      </article>
+      <article class="card">
+        <div class="card-top"><img src="assets/canva.png" alt="" width="36" height="36"><h3>Graphic Design</h3></div>
+        <p>Thumbnails, presentations, infographics, social posts, posters and marketing materials with clean, consistent layouts.</p>
+        <div class="tools">Canva</div>
+      </article>
+      <article class="card">
+        <div class="card-top"><div class="ico" aria-hidden="true">✓</div><h3>Data Entry &amp; Quality Control</h3></div>
+        <p>Accurate recording of structured data into company software, plus checks for accuracy and consistency before it's used.</p>
+        <div class="tools">Sports data operations</div>
+      </article>
+      <article class="card">
+        <div class="card-top"><img src="assets/vibecode.png" alt="" width="36" height="36"><h3>AI-Assisted Development</h3></div>
+        <p>Using AI to generate, debug and document code quickly, then validating and adapting the results to project requirements.</p>
+        <div class="tools">Rapid prototyping</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Experience</div>
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <div class="when">2026 – Present<small>Current</small></div>
+        <div>
+          <h3>Data Entry Specialist</h3>
+          <a class="org" href="https://framesports.ai/" target="_blank" rel="noopener">Frames Sports AI ↗</a>
+          <ul>
+            <li>Record and input rugby union match data accurately into the company's software.</li>
+            <li>Perform quality control checks to ensure data accuracy and consistency.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">2023 – 2024<small>YouTube channel</small></div>
+        <div>
+          <h3>YouTube Video Editor</h3>
+          <a class="org" href="https://www.youtube.com/@cleaningmadeeasybyIvan" target="_blank" rel="noopener">Cleaning Made Easy YouTube Channel ↗</a>
+          <ul>
+            <li>Edited long-form YouTube videos and YouTube Shorts.</li>
+            <li>Designed thumbnails to improve click-through rates.</li>
+            <li>Added transitions, captions, sound effects and background music.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="recognition" id="recognition">
+  <div class="wrap rec-grid">
+    <img src="assets/certificate.jpg" alt="Cloudstaff Certificate of Award: Best Student Contribution, AI Hackathon 2025" width="680" height="510">
+    <div>
+      <div class="eyebrow">Recognition</div>
+      <h2>Cloudstaff AI Hackathon 2025</h2>
+      <p>Awarded Best Student Contribution for outstanding participation and valuable contribution during the Cloudstaff AI Hackathon, presented on 25 November 2025.</p>
+      <div class="meta">
+        <div><span>Organization</span><b>Cloudstaff</b></div>
+        <div><span>Event</span><b>AI Hackathon 2025</b></div>
+        <div><span>Award</span><b>Best Student Contribution</b></div>
+        <div><span>Date</span><b>25 November 2025</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" style="padding:80px 0">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:32px">
+      <div class="eyebrow">Education</div>
+      <h2>Academic background</h2>
+    </div>
+    <div class="timeline">
+      <div class="edu">
+        <div><h3>City College of Angeles</h3><p>Bachelor of Science in Computer Science · 2023 – present</p></div>
+        <span class="pill">In progress</span>
+      </div>
+      <div class="edu">
+        <div><h3>Angeles City National Trade School</h3><p>Senior High School · 2022 – 2023</p></div>
+        <span class="pill">Graduated with honors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's work together</h2>
+    <p class="sub">Open to video editing, design and data operations work. Send a message with a few details and I'll get back to you.</p>
+    <div class="channels">
+      <a class="channel" href="mailto:gerwinsangalang0405@gmail.com">
+        <img src="assets/email.png" alt="" width="30" height="30">
+        <div><span>Email</span><b>gerwinsangalang0405@gmail.com</b></div>
+      </a>
+      <a class="channel" href="https://wa.me/639603928892" target="_blank" rel="noopener">
+        <img src="assets/whatsapp.png" alt="" width="30" height="30">
+        <div><span>WhatsApp</span><b>+63 960 392 8892</b></div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Gerwin Sangalang</span>
+    <span>Angeles City, Philippines</span>
+  </div>
+</footer>
+
+</body>
+</html>
